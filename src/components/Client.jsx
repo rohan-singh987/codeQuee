@@ -1,9 +1,11 @@
-import React from 'react'
+import Avvvatars from "avvvatars-react"
+
 
 const Client = ({ userName }) => {
   return (
-    <div>
-        {userName}
+    <div className="m-2">
+        <Avvvatars value={userName} size={50} />
+        <span> {userName} </span>
     </div>
   )
 }
