@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import Client from '../components/Client';
-import Editor from '../components/Editor';
+import Editorr from '../components/Editorr';
 
 const EditorPage = () => {
 
@@ -44,7 +44,7 @@ const EditorPage = () => {
         </div>
       </div>
       <div>
-        <Editor />
+        <Editorr />
       </div>
     </div>
   )
