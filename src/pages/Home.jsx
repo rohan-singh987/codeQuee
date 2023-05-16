@@ -42,8 +42,8 @@ const Home = () => {
     };
 
     return (
-        <div className='flex flex-col h-screen justify-center items-center p-3 sm:px-1 bg-red-200  ' >
-            <div className='bg-gray-100 p-6 sm:p-20 rounded-lg '>
+        <div className='flex flex-col h-screen justify-center items-center p-3 sm:px-1 bg-gradient-to-tr from-[#FFDCB6] via-[#B799FF] to-[#A5C0DD]  ' >
+            <div className='bg-gradient-to-r from-[#577D86] via-[#87CBB9] to-[#B9EDDD] p-6 sm:p-20 rounded-lg '>
             <div className='items-center flex justify-center font-bold text-4xl '>
                 CodeQue
             </div>
@@ -62,7 +62,7 @@ const Home = () => {
                     onChange={(e) => setUserName(e.target.value)}
                     onKeyUp={handleEnter}
                 />
-                <button className=' flex justify-items-end ml-auto rounded-full bg-white m-2 px-5 py-2'
+                <button className=' flex justify-items-end ml-auto rounded-full bg-white m-2 px-5 py-2 hover:bg-red-900 hover:text-white'
                     onClick={joinRoom}
                 >
                     Join
@@ -72,7 +72,7 @@ const Home = () => {
                     <a
                         onClick={createRoom}
                         href=""
-                        className="hover:text-red-900"
+                        className="hover:text-red-900 font-bold text-[#000] text-md underline "
                     >
                         new room
                     </a>
