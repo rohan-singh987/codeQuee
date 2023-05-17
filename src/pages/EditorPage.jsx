@@ -37,12 +37,19 @@ const EditorPage = () => {
       })
 
       // Listing for joined event
-      socketRef.current.on(
-        ACTIONS.JOINED,
-        ({clients, userName, socketId}) => {
+      socketRef.current.on(ACTIONS.JOINED, ({clients, userName, socketId}) => {
           toast.success(`${userName} has joined the room`);
           console.log(`${userName} joined`);
           setClient(clients)
+        }
+      )
+
+      // Listening for disconnected
+      socketRef.current.on(ACTIONS.DISCONNECTED, ({socketId, userName}) => {
+            toast.error(`${userName} left the room.`)
+            setClient((prev) => {
+              return prev.filter( (client) => client.socketId !== socketId)
+            })
         }
       )
 
@@ -50,7 +57,31 @@ const EditorPage = () => {
 
     }
     init();
+
+    // Clearing Listeners to prevent memory leak
+    return() => {
+      socketRef.current.disconnect()
+      socketRef.current.off(ACTIONS.JOINED).disconnect()
+      socketRef.current.off(ACTIONS.DISCONNECTED).disconnect()
+    }
   }, [])
+
+
+  const copyRoomID = async() => {
+    try{
+        await navigator.clipboard.writeText(roomId);
+        toast.success("Room ID copied")
+    }
+    catch(err)
+    {
+      console.log(err);
+      toast.error("Cant copy Room ID")
+    }
+  }
+
+  const leaveRoom = () => {
+    reactNavigator('/')
+  }
 
 
 
@@ -77,8 +108,8 @@ const EditorPage = () => {
             }
           </div>
         <div className='flex flex-col' >
-          <button>Copy RoomId</button>
-          <button>Leave</button>
+          <button onClick={copyRoomID} >Copy RoomId</button>
+          <button onClick={leaveRoom} >Leave</button>
         </div>
         </div>
       </div>
