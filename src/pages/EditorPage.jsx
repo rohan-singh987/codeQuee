@@ -1,7 +1,7 @@
 import { useState, useRef, useEffect } from 'react'
 import toast from 'react-hot-toast';
 import { Navigate, useLocation, useNavigate, useParams } from 'react-router-dom';
-import * as ACTIONS from '../Actions';
+import ACTIONS from '../Actions';
 import Client from '../components/Client';
 import Editorr from '../components/Editorr';
 import { initSocket } from '../socket';

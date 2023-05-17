@@ -3,7 +3,7 @@ const app = express();
 const http = require('http');
 const path = require('path');
 const { Server } = require('socket.io');
-const ACTIONS = require('./src/Actions');
+// const ACTIONS = require('./src/Actions');
 
 const server = http.createServer(app);
 const io = new Server(server);
@@ -21,12 +21,12 @@ function getAllConnectedClients(roomId) {
 
 io.on('connection', (socket) => {
     console.log('Socket Connected', socket.id);
-        socket.on(ACTIONS.JOIN, ({ roomId, userName }) => {
+        socket.on("join", ({ roomId, userName }) => {
             userSocketMap[socket.id] = userName;
             socket.join(roomId);
             const clients = getAllConnectedClients(roomId);
             clients.forEach(({ socketId }) => {
-                io.to(socketId).emit(ACTIONS.JOINED, {
+                io.to(socketId).emit("joined", {
                     clients,
                     userName,
                     socketId: socket.id,

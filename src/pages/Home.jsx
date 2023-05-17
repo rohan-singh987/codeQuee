@@ -43,7 +43,7 @@ const Home = () => {
 
     return (
         <div className='flex flex-col h-screen justify-center items-center p-3 sm:px-1 bg-gradient-to-tr from-[#FFDCB6] via-[#B799FF] to-[#A5C0DD]  ' >
-            <div className='bg-gradient-to-r from-[#577D86] via-[#87CBB9] to-[#B9EDDD] p-6 sm:p-20 rounded-lg '>
+            <div className='bg-gradient-to-r from-[#BDCDD6] via-[#D6E4E5] to-[#B9EDDD] drop-shadow-2xl border-double border-4 border-sky-500 p-6 sm:p-20 rounded-lg '>
             <div className='items-center flex justify-center font-bold text-4xl '>
                 CodeQue
             </div>
