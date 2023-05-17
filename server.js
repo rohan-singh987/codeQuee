@@ -11,7 +11,8 @@ const io = new Server(server);
 const userSocketMap = {};
 
 function getAllConnectedClients(roomId) {
-    return Array.from(io.sockets.adapter.rooms.get(roomId) || []).map((socketId) => {
+    return Array.from(io.sockets.adapter.rooms.get(roomId) || []).map(
+        (socketId) => {
         return{
             socketId,
             userName: userSocketMap[socketId],
@@ -21,10 +22,15 @@ function getAllConnectedClients(roomId) {
 
 io.on('connection', (socket) => {
     console.log('Socket Connected', socket.id);
+
         socket.on("join", ({ roomId, userName }) => {
             userSocketMap[socket.id] = userName;
             socket.join(roomId);
+
             const clients = getAllConnectedClients(roomId);
+
+            console.log(clients);
+
             clients.forEach(({ socketId }) => {
                 io.to(socketId).emit("joined", {
                     clients,
