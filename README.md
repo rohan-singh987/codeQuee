@@ -5,5 +5,4 @@ with a code editor. It is designed to allow multiple users to work together in r
 
 <img width="1440" alt="Screenshot 2023-05-19 at 11 35 37 PM" src="https://github.com/rohan-singh987/codeQuee/assets/76906632/12f9c378-adaf-421a-b256-d25e32bb403b">
 
-
-<img width="1440" alt="Screenshot 2023-05-19 at 11 35 06 PM" src="https://github.com/rohan-singh987/codeQuee/assets/76906632/cf82dcaa-a001-4896-badb-755481c3d472">
+<img width="1440" alt="Screenshot 2023-05-19 at 11 37 29 PM" src="https://github.com/rohan-singh987/codeQuee/assets/76906632/44b4e774-906a-4a4d-9627-467629f993a1">
